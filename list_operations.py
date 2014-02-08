@@ -113,30 +113,46 @@ the test_list_operations.py file for concrete examples of expected behavior.
 
 def custom_len(input_list):
     """custom_len(input_list) imitates len(input_list)"""
-    pass
+    count = 0
+    for item in input_list:
+        count = count + 1
+    return count    
 
-# For the next four functions, get clever using slice operations described in the first half
+# For the next four functions, get clever using slice opea.rations described in the first half
 def custom_append(input_list, value):
     """custom_append(input_list, value) imitates input_list.append(value)"""
-    pass
+    input_list[len(input_list):] = [value]
+    
 
 def custom_extend(input_list, values):
     """custom_extend(input_list, values) imitates input_list.extend(values)"""
-    pass
+    input_list[len(input_list):]=values
+    
 
 def custom_insert(input_list, index, value):
     """custom_insert(input_list, index, value) imitates
     input_list.insert(index, value)
     """
-    pass
+    input_list[index:index]=[value]
+
 
 def custom_remove(input_list, value):
     """custom_remove(input_list, value) imitates input_list.remove(value)"""
-    pass
+    count=0
+    while True: 
+
+        if input_list[count] != value:
+            count+= 1
+        else:
+            del input_list[count]
+            return False
 
 def custom_pop(input_list):
     """custom_pop(input_list) imitates input_list.pop()"""
-    pass
+    x=input_list[-1:]
+    del input_list[-1:]
+    x=x[0]
+    return x
 
 def custom_index(input_list, value):
     """custom_index(input_list, value) imitates input_list.index(value)"""
