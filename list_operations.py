@@ -156,11 +156,24 @@ def custom_pop(input_list):
 
 def custom_index(input_list, value):
     """custom_index(input_list, value) imitates input_list.index(value)"""
-    pass
+    count=0
+    while True:
+
+        if input_list[count] != value:
+            count+=1
+        else:
+            return count 
+            break   
+
 
 def custom_count(input_list, value):
     """custom_count(input_list, value) imitates input_list.count(value)"""
-    pass
+    count=0
+    for i in input_list:
+        if i == "value":
+            count+= 1
+        return count 
+    
 
 def custom_reverse(input_list):
     """custom_reverse(input_list) imitates input_list.reverse()"""
